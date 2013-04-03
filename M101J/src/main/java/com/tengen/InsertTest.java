@@ -18,7 +18,7 @@ public class InsertTest {
         DB course = client.getDB("course");
         DBCollection collection = course.getCollection("insertTest");
 
-        CollectionUtils.showCollection(collection);
+        CollectionUtils.showCollection(collection, true);
 
         collection.drop();
 
@@ -30,7 +30,7 @@ public class InsertTest {
 
         collection.insert(doc);
 
-        CollectionUtils.showCollection(collection);
+        CollectionUtils.showCollection(collection, true);
     }
 
 }
