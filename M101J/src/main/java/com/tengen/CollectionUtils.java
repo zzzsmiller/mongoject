@@ -50,4 +50,16 @@ public class CollectionUtils {
         }
 
     }
+
+    public static void simpleCursorPrint(DBCursor cursor) {
+
+        try {
+            while (cursor.hasNext()) {
+                System.out.println(cursor.numSeen() + ":" + cursor.next());
+            }
+        } finally {
+            cursor.close();
+        }
+
+    }
 }
