@@ -1,1 +1,1 @@
-{ "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "ns" : "course.user", "name" : "_id_" } ] }
+{ "indexes" : [ { "name" : "_id_", "ns" : "course.user", "key" : { "_id" : { "$oid" : "000000000000000000000000" } } } ] }
