@@ -5,9 +5,9 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 
 public class CollectionUtils {
-    static void showCollection(DBCollection collection, boolean idShow) {
+    public static void showCollection(DBCollection collection, boolean idShow) {
         DBCursor cursor = collection.find(null, new BasicDBObject("_id", idShow));
-        System.out.println(String.format("Collection %s contains:", collection.getName()));
+        System.out.println(String.format("\n Collection %s contains:", collection.getName()));
         System.out.println("-----------------------------");
         try {
             int order = 0;
@@ -32,10 +32,10 @@ public class CollectionUtils {
             cursor.close();
         }
         System.out.println("-----------------------------");
-        System.out.println(String.format("End of collection %s .", collection.getFullName()));
+        System.out.println(String.format("End of collection %s . \n", collection.getFullName()));
     }
 
-    static void printElementByIndex(DBCollection collection, int index, boolean idShow) {
+    public static void printElementByIndex(DBCollection collection, int index, boolean idShow) {
         DBCursor cursor;
         if (index == 0) {
             cursor = collection.find().limit(1);
@@ -52,7 +52,7 @@ public class CollectionUtils {
     }
 
     public static void simpleCursorPrint(DBCursor cursor) {
-
+        System.out.println("\n ----------- start of cursor -------------");
         try {
             while (cursor.hasNext()) {
                 System.out.println(cursor.numSeen() + ":" + cursor.next());
@@ -60,6 +60,7 @@ public class CollectionUtils {
         } finally {
             cursor.close();
         }
+        System.out.println(" ----------- end of cursor ------------- \n");
 
     }
 }
